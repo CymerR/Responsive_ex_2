@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   overflow: hidden;
 }
@@ -13,7 +14,7 @@ section {
   height: 100vh;
   overflow: hidden;
   background-color: #000000;
-  transition: .5s;
+  transition: .7s;
   background: url(bg.jpg);
   background-repeat: no-repeat;
   /* background-size: cover; */
@@ -87,7 +88,7 @@ main .article .text {
   font-size: 16px;
 }
 
-main  .links {
+main .links {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -155,18 +156,19 @@ main  .links {
 
 section.active {
   transform: translateX(-400px);
-  /* overflow: visible; */
 }
 
 #nav {
-  width: 400px;
+  min-width: 400px;
   position: absolute;
   top: 0;
   right: -400px;
   height: 100%;
   background-color: #00e0ff;
-  transition: .5s;
+  transition: .7s;
+  overflow: hidden;
 }
+
 #nav ul {
   display: -webkit-flex;
   display: -ms-flex;
@@ -175,45 +177,81 @@ section.active {
   -ms-flex-direction: column;
   flex-direction: column;
   justify-content: space-between;
-  -ms-align-items: baseline;
-  align-items: baseline;
+  -ms-align-items: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   list-style: none;
-  padding: 15px;
+  padding: 15px 20px;
 }
 
 #nav ul li {
   margin: 20px 0;
-
 }
 
 #nav ul li a {
   color: #fff;
   text-transform: uppercase;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 2rem;
   text-decoration: none;
 }
 
 #nav.active {
   right: -0;
 }
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
+  header .logo {
+    font-size: 20px;
+  }
+
+header .btn__wrapper {
+  width: 45px;
+  height: 45px;
+}
+
+header .btn {
+  width: 25px;
+  height: 3px;
+}
+
+header .btn.active {
+  height: 25px;
+  width: 3px;
+}
+
   main {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    height: 60vh;
-    padding: 15px 100px;  
+    /* height: 60vh; */
+    padding: 15px 80px;
   }
-  main  .links {
+
+  main .article .label {
+    font-size: 32px;
+  }
+
+  main .article .text {
+    font-size: 12px;
+  }
+
+  main .links {
     flex-direction: row;
-    margin-top: 50%;
+    margin-top: 25%;
   }
+
   main .article {
     max-width: 600px;
+  }
+  #nav {
+    width: 50vw;
+  }
+  section.active {
+    transform: translateX(-50vw);
+    /* overflow: visible; */
   }
 }
